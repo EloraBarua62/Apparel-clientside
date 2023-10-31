@@ -6,7 +6,11 @@ export const adminLogin = createAsyncThunk("auth/adminLogin" , async(info, {reje
     try{
 
       const {data} = await api.post('/admin-login' , info , {withCredentials: true})
+      console.log(data)
+      const name = data.userInfo.name;
+      const email = data.userInfo.email;
       localStorage.setItem('accessToken' , data.token);
+      localStorage.setItem('userInfo', JSON.stringify({name,email}));
       return fulfillWithValue(data);
     }
     catch(error){

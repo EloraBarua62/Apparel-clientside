@@ -10,11 +10,11 @@ const navigate = navigation();
 
 
 export default function Home() {
-    console.log(navigate);
+    // console.log(navigate);
     const [currentComponent, setCurrentComponent] = useState(
       navigate[0].datatable
     );
-    console.log(currentComponent);
+    // console.log(currentComponent);
 
  
     const [openSidebar, setOpenSidebar] = useState(false);

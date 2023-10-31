@@ -183,7 +183,7 @@ body {
         background-color: $grey-color-medium;
       }
 
-    @media (min-width: 640px) {
+      @media (min-width: 640px) {
         left: 0;
       }
 
@@ -191,13 +191,12 @@ body {
 
 
 
-
-
-
     .admin_dashboard_currentstate_upper{
 
       width: 100%;
+      // background-color: red;
       // height: 100%;
+      padding: 20px;
 
       .admin_dashboard_sidebar_open{
         position: fixed;
@@ -223,6 +222,8 @@ body {
       .admin_dashboard_currentstate {
       width: 100%;
       height: 100%;
+      // background-color: yellow;
+      // padding: 10px;
       display: flex;
       justify-content: center;
 
