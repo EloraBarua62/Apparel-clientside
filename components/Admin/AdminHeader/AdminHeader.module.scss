@@ -1,0 +1,30 @@
+@import "../../../styles/config";
+
+.header_design {
+  width: 95%;
+  height: 50px;
+  position: fixed;
+//   top: 0;
+//   left: 0;
+  z-index: 40;
+  background-color: $grey-color-light;
+  color: $grey-white-color;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0px solid;
+  border-radius: 5px;
+
+   @media (min-width: 640px) {
+        width: calc(100% - 300px);
+    }
+
+  .burger {
+    width: 50px;
+    display: flex;
+
+    @media (min-width: 640px) {
+        display: none;
+       
+    }
+  }
+}

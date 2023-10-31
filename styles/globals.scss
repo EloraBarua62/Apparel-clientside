@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "config";
 
+
 // Style: body
 body {
   font-family: "Montserrat", sans-serif;
@@ -72,15 +73,11 @@ body {
           color: $white-color;
           border: 0;
           border-radius: 5px;
-
         }
 
         .access_form_submit:hover {
           background-color: orange;
         }
-
-
-        
       }
       .newroute {
         color: $orange-color;
@@ -113,28 +110,128 @@ body {
         border: 0 solid;
         border-radius: 5px;
 
-
         .icon_property {
           width: 25px;
           height: 25px;
         }
       }
-
-      
     }
   }
 
-
   // Admin Panel
   // Admin Navigation
-  .admin_dashboard_navigation{
-
+  .admin_dashboard_navigation {
     width: 100%;
     height: 100vh;
+    display: flex;
 
-     @media (min-width: 640px) {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-     }
+    .admin_dashboard_sidebar {
+      width: 260px;
+      position: fixed;
+      z-index: 50;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $grey-color-deep;
+      color: $grey-white-color;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .button_design {
+        width: 100%;
+        color: $grey-white-color;
+        background-color: $grey-color-light;
+        border: 0px solid;
+        border-radius: 4px;
+        padding: 5px;
+      }
+
+      .button_design:hover {
+        background-color: $grey-color-medium;
+      }
+    }
+
+
+    .admin_dashboard_sidebar_change {
+      width: 260px;
+      position: fixed;
+      z-index: 50;
+      height: 100%;
+      top: 0;
+      left: -300px;
+      background-color: $grey-color-deep;
+      color: $grey-white-color;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .button_design {
+        width: 100%;
+        color: $grey-white-color;
+        background-color: $grey-color-light;
+        border: 0px solid;
+        border-radius: 4px;
+        padding: 5px;
+      }
+
+      .button_design:hover {
+        background-color: $grey-color-medium;
+      }
+
+    @media (min-width: 640px) {
+        left: 0;
+      }
+
+    }
+
+
+
+
+
+
+    .admin_dashboard_currentstate_upper{
+
+      width: 100%;
+      // height: 100%;
+
+      .admin_dashboard_sidebar_open{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        // transition-duration: 200ms;
+        background-color: rgba(0, 0, 0, 0.368);
+        visibility: visible;
+
+        @media (min-width: 640px) {
+        visibility: hidden;
+      }
+      }
+
+      .admin_dashboard_sidebar_hide{
+        visibility: hidden;
+      }
+      
+      
+      .admin_dashboard_currentstate {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: 640px) {
+        margin-left: auto;
+        width: calc(100% - 280px);
+      }
+    }
+    }
+    
   }
 }

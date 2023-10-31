@@ -17,24 +17,42 @@ export default function Home() {
     console.log(currentComponent);
 
  
-    const [sidebar, setSidebar] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(false);
   return (
     <div className="admin_dashboard_navigation">
       {/* <AdminSidebar ></AdminSidebar> */}
-      <AdminSidebar
-        sidebar={sidebar}
-        navigate={navigate}
-        currentComponent={currentComponent}
-        setCurrentComponent={setCurrentComponent}
-      ></AdminSidebar>
 
-      <div>
-        <AdminHeader></AdminHeader>
-        <AdminCurrentState
+        <AdminSidebar
+          navigate={navigate}
           currentComponent={currentComponent}
-        ></AdminCurrentState>
-        {/* <AdminNavigation></AdminNavigation> */}
-        {/* <AdminNavigation currentComponent={currentComponent}></AdminNavigation> */}
+          setCurrentComponent={setCurrentComponent}
+          openSidebar={openSidebar}
+        ></AdminSidebar>
+
+
+      <div className="admin_dashboard_currentstate_upper">
+        <div
+          onClick={() => {
+            setOpenSidebar(false);
+          }}
+          className={`${
+            !openSidebar
+              ? "admin_dashboard_sidebar_hide"
+              : "admin_dashboard_sidebar_open"
+          }`}
+        ></div>
+        
+        <div className="admin_dashboard_currentstate">
+          <AdminHeader
+            openSidebar={openSidebar}
+            setOpenSidebar={setOpenSidebar}
+          ></AdminHeader>
+          <AdminCurrentState
+            currentComponent={currentComponent}
+          ></AdminCurrentState>
+          {/* <AdminNavigation></AdminNavigation> */}
+          {/* <AdminNavigation currentComponent={currentComponent}></AdminNavigation> */}
+        </div>
       </div>
     </div>
   );
