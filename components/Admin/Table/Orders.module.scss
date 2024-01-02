@@ -1,0 +1,112 @@
+@import "../../../styles/config";
+
+.order_table {
+  background-color: $grey-color-deep;
+  color: $grey-white-color;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+
+  @media (min-width: 1024px) {
+    font-size: 15px;
+  }
+
+  // Order table design
+  .order_table_design {
+    padding-left: 10px;
+    padding-right: 10px;
+    
+
+    .order_table_field {
+      border-bottom: 1px solid gray;    
+      
+      
+      // Main field
+       .order_table_data {
+       
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;      
+        color: $grey-white-color;
+        
+
+        .table_cell1 {
+          width: 25%;
+        }
+        .table_cell2 {
+          width: 13%;
+        }
+        .table_cell3 {
+          width: 18%;
+        }
+        .table_cell4 {
+          width: 18%;
+        }
+        .table_cell5 {
+          width: 18%;
+        }
+        .table_cell6 {
+          width: 8%;
+        }
+      }
+
+
+    //  Sub field
+      .order_table_data_inner {
+        background-color: $grey-color-medium;
+        display: flex;
+        justify-content: start;
+        align-items: center;      
+        color: $grey-white-color;
+        padding-top: 10px;
+        padding-bottom: 10px;
+       
+
+        .table_cell1 {
+          width: 25%;
+          span{
+            padding-left: 10px;
+            // padding-right: 5px;
+          }
+        }
+        .table_cell2 {
+          width: 13%;
+        }
+        .table_cell3 {
+          width: 18%;
+        }
+        .table_cell4 {
+          width: 18%;
+        }
+        // .table_cell5 {
+        //   background-color: orange;
+        //   width: 18%;
+        // }
+        // .table_cell6 {
+        //   background-color: orange;
+        //   width: 8%;
+        // }
+      }
+
+       .close_show{
+        display: none;
+      }
+    }
+
+    // Navgation option
+    // select {
+    //   background-color: transparent;
+    //   color: $grey-white-color;
+    //   border: 1px solid $grey-white-color;
+    //   border-radius: 5px;
+    //   padding: 2px;
+    //   outline: none;
+
+    //   option {
+    //     color: black;
+    //   }
+    // }
+  }
+}

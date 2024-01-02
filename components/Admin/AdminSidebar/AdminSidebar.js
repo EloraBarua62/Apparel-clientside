@@ -17,7 +17,7 @@ const AdminSidebar = ({ navigate, setCurrentComponent, openSidebar}) => {
           <div key={item.id}>
             <button
               className="button_design"
-              onClick={() => setCurrentComponent(item.datatable)}
+              onClick={() => setCurrentComponent(item.title)}
             >
               {item.title}
             </button>

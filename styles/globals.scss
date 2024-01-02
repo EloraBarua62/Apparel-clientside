@@ -196,7 +196,12 @@ body {
       width: 100%;
       // background-color: red;
       // height: 100%;
-      padding: 20px;
+
+      
+
+      @media (min-width: 640px) {
+        padding: 20px;
+      }
 
       .admin_dashboard_sidebar_open{
         position: fixed;
@@ -234,5 +239,17 @@ body {
     }
     }
     
+  }
+
+
+  .open_state{
+    display: block;
+    border-bottom: 1px solid white;
+    background-color: $grey-color-light;
+    padding: 10px;
+  }
+
+  .close_state{
+    display: hidden;
   }
 }

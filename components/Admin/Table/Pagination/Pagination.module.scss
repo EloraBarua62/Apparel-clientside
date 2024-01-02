@@ -1,0 +1,46 @@
+@import "../../../../styles/config";
+
+
+.arrow_pagination_set{
+    display: flex;
+}
+.arrow{
+    width: 25px;
+    height: 25px;
+    color: $grey-white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination {
+  display: flex;
+  gap: 10px;
+  .active_page {
+    width: 25px;
+    height: 25px;
+    background-color: $grey-color-light;
+    color: $grey-white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid;
+    border-radius: 4px;
+  }
+
+  .inactive_page {
+    width: 25px;
+    height: 25px;
+    background-color: $grey-white-color;
+    color: $grey-color-deep;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid;
+    border-radius: 4px;
+  }
+
+  .inactive_page:hover{
+    background-color: $grey-color-medium;
+    color: $grey-white-color;
+  }
+}
