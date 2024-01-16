@@ -1,5 +1,4 @@
 import AdminHeader from "@/components/Admin/AdminHeader/AdminHeader";
-
 import AdminSidebar from "@/components/Admin/AdminSidebar/AdminSidebar";
 import navigation from "@/components/Admin/AdminNavigation/AdminNavigation";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import AddProduct from "@/components/Admin/Table/AddProduct";
 import AllProducts from "@/components/Admin/Table/AllProducts";
 import Payment from "@/components/Admin/Table/Payment";
 import Profile from "@/components/Admin/Table/Profile";
+import Sellers from "@/components/Admin/Table/Sellers";
 
 const navigate = navigation();
 
@@ -77,19 +77,23 @@ export default function Home() {
             <AdminCurrentState
               currentComponent={<DashboardHome />}
             ></AdminCurrentState>
-          ) : (currentComponent == "Orders" ? (
+          ) : currentComponent == "Orders" ? (
             <AdminCurrentState
               currentComponent={<Orders />}
             ></AdminCurrentState>
-          ) : (currentComponent == "Category" ? (
+          ) : currentComponent == "Category" ? (
             <AdminCurrentState
               currentComponent={<Category />}
+            ></AdminCurrentState>
+          ) : currentComponent == "Sellers" ? (
+            <AdminCurrentState
+              currentComponent={<Sellers />}
             ></AdminCurrentState>
           ) : (
             <AdminCurrentState
               currentComponent={<AddProduct />}
             ></AdminCurrentState>
-          )))}
+          )}
 
           {/* <AdminCurrentState
             currentComponent={<DashboardHome />}

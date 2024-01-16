@@ -101,7 +101,7 @@ const Orders = () => {
         setPageNumber={setCurrentPage}
         totalItem={50}
         parPage={parPage}
-        showItem={3}
+        showItem={4}
       />
     </div>
   );

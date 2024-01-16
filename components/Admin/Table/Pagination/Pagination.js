@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Pagination.module.scss";
-import { BsChevronDoubleLeft } from "react-icons/bs";
+import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 
 const Pagination = ({pageNumber, setPageNumber, totalItem, parPage, showItem}) => {
     
@@ -33,11 +33,22 @@ const Pagination = ({pageNumber, setPageNumber, totalItem, parPage, showItem}) =
     return (
       <ul className={styles.arrow_pagination_set}>
         {pageNumber > 1 && (
-          <div onClick={() => setPageNumber(pageNumber-1)} className={styles.arrow}>
+          <div
+            onClick={() => setPageNumber(pageNumber - 1)}
+            className={styles.arrow}
+          >
             <BsChevronDoubleLeft />
           </div>
         )}
         <div className={styles.pagination}>{createBtn()}</div>
+        {pageNumber < totalPage && (
+          <div
+            onClick={() => setPageNumber(pageNumber + 1)}
+            className={styles.arrow}
+          >
+            <BsChevronDoubleRight />
+          </div>
+        )}
       </ul>
     );
 };

@@ -31,9 +31,9 @@ const navigation = () => {
     },
     {
       id: 4,
-      title: "AddProduct",
+      title: "Sellers",
       role: "admin",
-      datatable: routes.AddProduct,
+      datatable: routes.Sellers,
     },
     {
       id: 5,

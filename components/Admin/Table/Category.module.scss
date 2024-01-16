@@ -1,0 +1,197 @@
+@import "../../../styles/config";
+
+.category_page_design {
+display: grid;
+grid-template-columns: 1;
+gap: 20px;
+@media (min-width: 1024px) {
+    grid-template-columns: 4fr 3fr;
+    
+  }
+
+  .category_left_table {
+    background-color: $grey-color-deep;
+    color: $grey-white-color;
+    // display: flex;
+    // flex-direction: column;
+
+    @media (min-width: 1024px) {
+      font-size: 15px;
+    }
+
+    // category_left table design
+    .category_left_table_design {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      // Main field
+      .category_left_table_data {
+        border-bottom: 1px solid gray;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        color: $grey-white-color;
+
+        .title_cell1 {
+          width: 20%;
+          font-size: 14px;
+        }
+        .title_cell2 {
+          width: 25%;
+          font-size: 14px;
+        }
+        .title_cell3 {
+          width: 25%;
+          font-size: 14px;
+        }
+        .title_cell4 {
+          width: 15%;
+          font-size: 14px;
+          //   font-weight: 800;
+        }
+        .title_cell5 {
+          width: 15%;
+          font-size: 14px;
+
+          display: flex;
+          gap: 10px;
+        }
+
+        .table_cell1 {
+          width: 20%;
+          font-size: 12px;
+          background-color: red;
+        }
+        .table_cell2 {
+          width: 25%;
+          font-size: 12px;
+          background-color: red;
+        }
+        .table_cell3 {
+          width: 25%;
+          font-size: 12px;
+          background-color: red;
+        }
+        .table_cell4 {
+          width: 15%;
+          font-size: 22px;
+        }
+        .table_cell5 {
+          width: 15%;
+          font-size: 22px;
+          display: flex;
+          gap: 10px;
+          //   background-color: red;
+        }
+      }
+
+      //  Sub field
+      //   .order_table_data_inner {
+      //     background-color: $grey-color-medium;
+      //     display: flex;
+      //     justify-content: start;
+      //     align-items: center;
+      //     color: $grey-white-color;
+      //     padding-top: 10px;
+      //     padding-bottom: 10px;
+
+      //     .table_cell1 {
+      //       width: 25%;
+      //       span{
+      //         padding-left: 10px;
+      //         // padding-right: 5px;
+      //       }
+      //     }
+      //     .table_cell2 {
+      //       width: 13%;
+      //     }
+      //     .table_cell3 {
+      //       width: 18%;
+      //     }
+      //     .table_cell4 {
+      //       width: 18%;
+      //     }
+      //     // .table_cell5 {
+      //     //   background-color: orange;
+      //     //   width: 18%;
+      //     // }
+      //     // .table_cell6 {
+      //     //   background-color: orange;
+      //     //   width: 8%;
+      //     // }
+      //   }
+
+      //    .close_show{
+      //     display: none;
+      //   }
+    }
+  }
+
+  .category_right_table{
+    background-color: $grey-color-deep;
+    color: $grey-white-color;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .category_right_table_title{
+      font-size: 12px;
+      font-weight: 500;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .input_field{
+      padding: 5px;
+      width: 70%;
+      border: 0px solid;
+      border-radius: 5px;
+    }
+
+    .category_right_table_image{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 200px;
+      border: 1px dashed $grey-white-color;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      span{
+        font-size: 30px;
+
+      }
+  }
+
+  .image_file{
+    visibility: hidden;
+  }
+
+  .submit{
+    padding: 10px;
+    border: 0 solid $grey-white-color;
+    border-radius: 5px;
+    background-color: $grey-white-color;
+    color: $grey-color-deep;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    float: left;
+    cursor: pointer;
+    // font-weight: 500;
+
+    
+}
+
+.submit:hover{
+      background-color: $grey-color-light;
+     color: $grey-white-color;
+    }
+
+
+}
+}
