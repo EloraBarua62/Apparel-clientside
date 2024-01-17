@@ -1,0 +1,64 @@
+@import "../../../styles/config";
+
+.payment_table {
+  background-color: $grey-color-medium;
+  color: $grey-white-color;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+
+    // Title Design
+    .title_design {
+      font-size: 15px;
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      @media (min-width: 1024px) {
+        font-size: 20px;
+      }
+    }
+
+    // Payment Details
+    .payment_details{
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .payment_details_field{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $grey-color-deep;
+           
+
+            .table_cell_min{
+                width: 8%;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            .table_cell_mid{
+                width: 17%;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            .table_cell_max{
+                width: 25%;
+                text-align: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+
+                .button_design{
+                    background-color: rgb(3, 144, 3);
+                    border: 0 solid;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+  
+}

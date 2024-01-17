@@ -1,13 +1,11 @@
-import React from 'react';
-import { routes } from '@/utils/dashboardRoutes';
+import DashboardHome from '../Table/DashboardHome';
+import Orders from '../Table/Orders';
+import Category from '../Table/Category';
+import Sellers from '../Table/Sellers';
+import PaymentRequest from '../Table/PaymentRequest';
+import DeactiveSellers from '../Table/DeactiveSellers';
+import SellersRequest from '../Table/SellersRequest';
 
-// import Payment from "@/components/Admin/Table/Payment";
-// import Profile from "@/components/Admin/Table/Profile";
-// import DashboardHome from '../Table/DashboardHome';
-// import Orders from '../Table/Orders';
-// import Category from '../Table/Category';
-// import AddProduct from '../Table/AddProduct';
-// import AllProducts from '../Table/AllProducts';
 
 const navigation = () => {
   return [
@@ -15,32 +13,45 @@ const navigation = () => {
       id: 1,
       title: "Dashboard",
       role: "admin",
-      datatable: routes.DashboardHome,
+      datatable: <DashboardHome/>,
     },
     {
       id: 2,
       title: "Orders",
       role: "admin",
-      datatable: routes.Orders,
+      datatable: <Orders/>,
     },
     {
       id: 3,
       title: "Category",
       role: "admin",
-      datatable: routes.Category,
+      datatable: <Category/>,
     },
     {
       id: 4,
       title: "Sellers",
       role: "admin",
-      datatable: routes.Sellers,
+      datatable: <Sellers/>,
     },
     {
       id: 5,
-      title: "AllProducts",
+      title: "Payment Request",
       role: "admin",
-      datatable: routes.AllProducts,
+      datatable: <PaymentRequest/>,
     },
+    {
+      id: 6,
+      title: "Deactive Sellers",
+      role: "admin",
+      datatable: <DeactiveSellers/>,
+    },
+    {
+      id: 7,
+      title: "Sellers Request",
+      role: "admin",
+      datatable: <SellersRequest/>,
+    },
+    
   ];
 };
 

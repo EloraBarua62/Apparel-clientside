@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
 
-   @media (min-width: 640px) {
+   @media (min-width: 768px) {
         width: calc(100% - 320px);
     }
 
@@ -28,7 +28,7 @@
     align-items: center;
     color: $grey-white-color;
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
         display: none;
        
     }
@@ -41,7 +41,7 @@
     height: 100%;
   
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
         display: flex;      
         align-items: center;
     }

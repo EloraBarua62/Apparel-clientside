@@ -9,9 +9,7 @@ import profile from '../../../public/profile.jpg'
 
 const DashboardHome = () => {
     const dashboard_summary = dashboardSummary();
-    console.log(dashboard_summary)
-
-
+    
     const state = {
       series: [
         {

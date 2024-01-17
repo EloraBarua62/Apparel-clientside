@@ -10,7 +10,6 @@ const AdminCurrentState = ({ currentComponent }) => {
     </div>
   );
 
-  // return <Component {...pageProps} />;
 };
 
 export default AdminCurrentState;

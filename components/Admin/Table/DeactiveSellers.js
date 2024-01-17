@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from "./Sellers.module.scss";
-import { GoPeople } from "react-icons/go";
-import Pagination from "./Pagination/Pagination";
+import { GoPeople } from 'react-icons/go';
+import Pagination from './Pagination/Pagination';
+import styles from './DeactiveSellers.module.scss'
 
-const Sellers = () => {
+const DeactiveSellers = () => {
     const [parPage, setParPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -101,4 +101,4 @@ const Sellers = () => {
     );
 };
 
-export default Sellers;
+export default DeactiveSellers;
