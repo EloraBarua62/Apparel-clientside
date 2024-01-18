@@ -5,6 +5,7 @@ import Sellers from '../Table/Sellers';
 import PaymentRequest from '../Table/PaymentRequest';
 import DeactiveSellers from '../Table/DeactiveSellers';
 import SellersRequest from '../Table/SellersRequest';
+import ChatSeller from '../Table/ChatSeller';
 
 
 const navigation = () => {
@@ -50,6 +51,12 @@ const navigation = () => {
       title: "Sellers Request",
       role: "admin",
       datatable: <SellersRequest/>,
+    },
+    {
+      id: 8,
+      title: "Chat Seller",
+      role: "admin",
+      datatable: <ChatSeller/>,
     },
     
   ];

@@ -23,6 +23,7 @@ const DeactiveSellers = () => {
               <div className={styles.table_cell1}>Order Id</div>
               <div className={styles.table_cell2}>Image</div>
               <div className={styles.table_cell3}>Name</div>
+              <div className={styles.table_cell7}>Shop Name</div>
               <div className={styles.table_cell4}>Email</div>
               <div className={styles.table_cell5}>Payment Status</div>
               <div className={styles.table_cell5}>Division</div>
@@ -40,6 +41,7 @@ const DeactiveSellers = () => {
               <GoPeople />
             </div>
             <div className={styles.table_cell3}>Elora Barua</div>
+            <div className={styles.table_cell7}>Elora's Fashion</div>
             <div className={styles.table_cell4}>
               <p>elorabarua@gamil.com</p>{" "}
             </div>
@@ -58,6 +60,7 @@ const DeactiveSellers = () => {
               <GoPeople />
             </div>
             <div className={styles.table_cell3}>Elora Barua</div>
+            <div className={styles.table_cell7}>Elora's Fashion</div>
             <div className={styles.table_cell4}>
               <p>elorabarua@gamil.com</p>{" "}
             </div>
@@ -76,6 +79,7 @@ const DeactiveSellers = () => {
               <GoPeople />
             </div>
             <div className={styles.table_cell3}>Elora Barua</div>
+            <div className={styles.table_cell7}>Elora's Fashion</div>
             <div className={styles.table_cell4}>
               <p>elorabarua@gamil.com</p>{" "}
             </div>
