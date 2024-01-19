@@ -3,7 +3,7 @@ import styles from "./Category.module.scss";
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GoPeople } from "react-icons/go";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
 import { CiImageOn } from "react-icons/ci";
 
 const Category = () => {

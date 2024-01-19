@@ -1,0 +1,69 @@
+@import "../../../../styles/config";
+
+.chatseller_content {
+  height: calc(100% - 140px);
+  background-color: $grey-color-medium;
+  color: $grey-white-color;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  padding: 5px;
+  gap: 10px;
+
+  @media (min-width: 1024px) {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  // Chat Seller content design
+  .chatseller_content_design {
+    // width: 100%;
+    height: 100%;
+    position: relative;
+
+    .seller_profile_open {
+      width: 30%;
+      height: calc(100% - 20px);
+      position: absolute;
+      background-color: $grey-color-deep;
+      left: 10px;
+      top: 10px;
+
+      @media (min-width: 1024px) {
+        background-color: transparent;
+      }
+
+      .seller_profile_design {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .seller_profile_close {
+      position: absolute;
+      left: -10px;
+    }
+
+    .seller_text{
+        width: 70%;
+        background-color: $grey-color-light;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    // Main field
+    // .chatseller_content_data {
+    //   padding-top: 10px;
+    //   padding-bottom: 10px;
+    //   display: flex;
+    //   justify-content: start;
+    //   align-items: start;
+    //   gap: 5px;
+    //   color: $grey-white-color;
+    //   border-bottom: 1px solid rgba(163, 159, 159, 0.374);
+
+    // }
+  }
+}

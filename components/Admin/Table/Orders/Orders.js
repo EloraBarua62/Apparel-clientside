@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Orders.module.scss";
 import { BsArrowBarDown } from "react-icons/bs";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
 
 const Orders = () => {
   const [parPage, setParPage] = useState(5);

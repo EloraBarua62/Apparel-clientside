@@ -1,15 +1,13 @@
 import AdminHeader from "@/components/Admin/AdminHeader/AdminHeader";
 import AdminSidebar from "@/components/Admin/AdminSidebar/AdminSidebar";
-import navigation from "@/components/Admin/AdminNavigation/AdminNavigation";
+import navigation from "@/components/Navigation/Navigation";
 import { useState } from "react";
 import AdminCurrentState from "@/components/Admin/AdminCurrentState/AdminCurrentState";
-import DashboardHome from "@/components/Admin/Table/DashboardHome";
-
+import DashboardHome from "@/components/Admin/Table/DashboardHome/DashboardHome";
 
 const navigate = navigation();
 
 export default function Home() {
-  
   const [openSidebar, setOpenSidebar] = useState(false);
   const [currentComponent, setCurrentComponent] = useState(DashboardHome);
 
@@ -43,11 +41,9 @@ export default function Home() {
             setOpenSidebar={setOpenSidebar}
           ></AdminHeader>
 
-         
           <AdminCurrentState
             currentComponent={currentComponent}
           ></AdminCurrentState>
-         
         </div>
       </div>
     </div>

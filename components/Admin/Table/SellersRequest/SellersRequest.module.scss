@@ -1,61 +1,55 @@
-@import "../../../styles/config";
+@import "../../../../styles/config";
 
-.sellers_table {
+.sellers_request_table {
   background-color: $grey-color-deep;
   color: $grey-white-color;
   display: flex;
   flex-direction: column;
   font-size: 10px;
+  padding: 5px;
+  gap: 10px;
 
   @media (min-width: 1024px) {
     font-size: 15px;
+    padding: 10px;
+    
   }
 
   // Order table design
-  .sellers_table_design {
+  .sellers_request_table_design {
     // padding-left: 10px;
     // padding-right: 10px;
-    border-bottom: 1px solid gray;
+    
 
     // Main field
-    .sellers_table_data {
+    .sellers_request_table_data {
       padding-top: 10px;
       padding-bottom: 10px;
       display: flex;
       justify-content: start;
-      align-items: center;
+      align-items: start;
       gap: 5px;
       color: $grey-white-color;
+      border-bottom: 1px solid rgba(163, 159, 159, 0.374);
 
-      .table_cell1 {
-        width: 12%;
-      }
-      .table_cell2 {
-        width: 12%;
-        // font-size: 24px;
-      }
-      .table_cell3 {
-        width: 12%;
-      }
-      .table_cell4 {
-        width: 18%;
-        p {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-      .table_cell5 {
-        width: 12%;
-        p {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-      .table_cell6 {
+      .table_cell_min {
         width: 10%;
       }
+      .table_cell_mid {
+        width: 15%;
+        // font-size: 24px;
+      }
+      .table_cell_max {
+        width: 30%;
+        p {
+         margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      
+      
     }
   }
 }
