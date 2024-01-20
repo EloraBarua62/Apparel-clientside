@@ -1,0 +1,87 @@
+@import "../../../styles/config";
+
+.summary_cart_display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .summary_cart_design {
+    background-color: $grey-color-medium;
+    color: $grey-white-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 0 solid;
+    border-radius: 5px;
+
+    .icon_design {
+      display: flex;
+      align-items: center;
+      font-size: 35px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+    }
+    h3 {
+      margin: 0;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.payment_section_display {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  // Payment section
+  .payment {
+    margin-top: 60px;
+    background-color: $grey-color-medium;
+    color: $grey-white-color;
+
+    h1 {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    form {
+      display: flex;
+    }
+
+    .pending_request_table {
+      background-color: $grey-color-deep;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+//   // Message
+//   .success_window_display {
+//     margin-top: 60px;
+//     padding: 10px;
+//     background-color: $grey-color-medium;
+//   }
+}

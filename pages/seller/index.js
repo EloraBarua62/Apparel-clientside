@@ -2,17 +2,17 @@ import AdminHeader from "@/components/AdminHeader/AdminHeader";
 import AdminSidebar from "@/components/AdminSidebar/AdminSidebar";
 import { useEffect, useState } from "react";
 import AdminCurrentState from "@/components/AdminCurrentState/AdminCurrentState";
-import DashboardHome from "@/components/Admin/Table/DashboardHome/DashboardHome";
+import SellerDashboardHome from "@/components/Seller/SellerDashboardHome/SellerDashboardHome";
 import getNavigation from "@/components/Navigation";
 
 
 export default function Home() {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const [currentComponent, setCurrentComponent] = useState(DashboardHome);
+  const [currentComponent, setCurrentComponent] = useState(SellerDashboardHome);
   const [navigate, setNavigate] = useState([]);
 
   useEffect(() => {
-    setNavigate(getNavigation("admin"));
+    setNavigate(getNavigation("seller"));
   },[])
   return (
     <div className="admin_dashboard_navigation">

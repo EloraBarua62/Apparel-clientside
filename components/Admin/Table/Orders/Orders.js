@@ -4,9 +4,9 @@ import { BsArrowBarDown } from "react-icons/bs";
 import Pagination from "../Pagination/Pagination";
 
 const Orders = () => {
-  const [parPage, setParPage] = useState(5);
-  const [state, setState] = useState(true);
+  
   const [show, setShow] = useState(false);
+  const [parPage, setParPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
 
