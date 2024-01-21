@@ -1,5 +1,6 @@
 @import "../../../styles/config";
 
+
 .summary_cart_display {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -46,18 +47,25 @@
 
 .payment_section_display {
   width: 100%;
+  background-color: $grey-color-deep;
+  margin-top: 60px;
+  padding-left: 5px;
+  padding-right: 5px;
 
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    padding: 10px;
   }
 
   // Payment section
   .payment {
-    margin-top: 60px;
+    margin-top: 10px;
     background-color: $grey-color-medium;
     color: $grey-white-color;
+    border: 1px solid $grey-white-color;
+    border-radius: 5px;
 
     h1 {
       font-size: 15px;
@@ -68,13 +76,13 @@
       display: flex;
     }
 
-    .pending_request_table {
-      background-color: $grey-color-deep;
+    .pending_request_table {    
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding-top: 10px;
       padding-bottom: 10px;
+      
     }
   }
 
@@ -85,3 +93,5 @@
 //     background-color: $grey-color-medium;
 //   }
 }
+
+

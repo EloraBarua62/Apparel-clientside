@@ -1,0 +1,69 @@
+@import "../../../styles/config";
+
+.profile_table {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  padding: 10px;
+
+  // Seller's profile details: image, name and description
+  .profile_details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey-color-medium;
+
+    div {
+      label {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 2px dotted $grey-color-deep;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        
+
+        .image_design{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .loader_design {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 45%;
+          top: 45%;
+          z-index: 20;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+    .seller_info{
+      width: 100%;
+      position: relative;
+      background-color: $grey-color-light;
+      margin: 10px;
+
+      .edit_icon{
+        position: absolute;
+        right: 10px;
+        padding: 5px;
+        background-color: yellow;
+        
+      }
+    }
+  }
+}
