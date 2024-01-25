@@ -21,8 +21,7 @@
     .sellers_table_data {
       padding-top: 10px;
       padding-bottom: 10px;
-      display: flex;
-      justify-content: start;
+      display: flex-start;
       align-items: center;
       gap: 5px;
       color: $grey-white-color;

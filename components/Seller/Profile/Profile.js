@@ -10,12 +10,13 @@ const Profile = () => {
     const loader = true;
     return (
       <div className={styles.profile_table}>
+        {/* Seller's profile details: image, name and description */}
         <div className={styles.profile_details}>
           {/* Image section */}
           <div>
             {image ? (
               <label htmlFor="img">
-                <Image src={profile} alt="" className={styles.image_design}/>
+                <Image src={profile} alt="" className={styles.image_design} />
                 {!loader && (
                   <div className={styles.loader_design}>
                     <span>
@@ -65,7 +66,20 @@ const Profile = () => {
             <div>Status: Active</div>
           </div>
         </div>
-        <div></div>
+
+        {/* Change password */}
+        <div className={styles.update_password}>
+          <h1>Change Password</h1>
+          <form>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="" />
+            <label htmlFor="old_password">Old Password</label>
+            <input type="old_password" name="old_password" id="" />
+            <label htmlFor="new_password">New Password</label>
+            <input type="new_password" name="new_password" id="" />
+            <button type="submit"> Update</button>
+          </form>
+        </div>
       </div>
     );
 };

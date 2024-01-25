@@ -20,9 +20,8 @@
   .all_products_table_data {
     padding-top: 10px;
     padding-bottom: 10px;
-    display: flex;
+    display: flex-start;
     justify-content: space-around;
-    align-items: start;
     color: $grey-white-color;
     gap: 15px;
 

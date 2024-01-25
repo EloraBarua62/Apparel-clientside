@@ -25,9 +25,7 @@
     .sellers_request_table_data {
       padding-top: 10px;
       padding-bottom: 10px;
-      display: flex;
-      justify-content: start;
-      align-items: start;
+      display: flex-start;
       gap: 5px;
       color: $grey-white-color;
       border-bottom: 1px solid rgba(163, 159, 159, 0.374);

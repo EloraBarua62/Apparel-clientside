@@ -30,7 +30,7 @@
         padding-bottom: 8px;
         display: flex;
         justify-content: start;
-        align-items: center;
+        align-items: start;
         color: $grey-white-color;
 
         .title_cell1 {
@@ -150,7 +150,7 @@
     }
 
     .category_right_table_image {
-      width: 100%;
+      width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -159,6 +159,12 @@
       border: 1px dashed $grey-white-color;
       margin-top: 20px;
       margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+      .image_design {
+            object-fit: cover;
+            position: absolute
+          }
 
       span {
         font-size: 30px;

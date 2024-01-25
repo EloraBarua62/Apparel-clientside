@@ -4,17 +4,19 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   color: white;
-  padding: 10px;
+  gap: 10px;
 
   // Seller's profile details: image, name and description
   .profile_details {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: $grey-color-medium;
+    padding: 10px;
 
     div {
       label {
@@ -55,14 +57,54 @@
       width: 100%;
       position: relative;
       background-color: $grey-color-light;
-      margin: 10px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
 
       .edit_icon{
         position: absolute;
         right: 10px;
         padding: 5px;
-        background-color: yellow;
+        background-color: blue;
         
+      }
+    }
+  }
+
+
+  // Update password
+  .update_password{
+    width: 40%;
+    height: 300px;
+    background-color: $grey-color-medium;
+
+    h1{
+      font-size: 20px;
+      text-align: center;
+    }
+
+    form{
+      width: 100%;
+      padding: 10px;
+      
+      label{
+        display: block;
+        font-size: 12px;
+      }
+      input{
+        border: 0px solid;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        outline: none;
+      }
+      button{
+        display: block;
+        padding: 10px;
+        border: 0px solid;
+        border-radius: 5px;
+        margin-top: 10px;
       }
     }
   }

@@ -56,8 +56,7 @@
     //  Sub field
       .order_table_data_inner {
         background-color: $grey-color-medium;
-        display: flex;
-        justify-content: start;
+        display: flex-start;
         align-items: center;      
         color: $grey-white-color;
         padding-top: 10px;

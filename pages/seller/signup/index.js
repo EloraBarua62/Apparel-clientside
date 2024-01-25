@@ -9,14 +9,13 @@ import facebook from '../../../public/facebook.png'
 const Signup = () => {
 
   const array = [["name","Name"],["email","Email"],["password","Password"]];
-  const step = "admin_signup";
+  const step = 'seller_signup'
     return (
       <div className="access_form_background">
         <div className="access_form">
           <h1>ADMIN SIGNUP</h1>
 
-          <AccessForm array={array}></AccessForm>
-        
+          <AccessForm array={array} step={step}></AccessForm>
           <p>
             Already have account?{" "}
             <Link href="/admin/login" className="newroute">

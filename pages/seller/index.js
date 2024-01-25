@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 import AdminCurrentState from "@/components/AdminCurrentState/AdminCurrentState";
 import SellerDashboardHome from "@/components/Seller/SellerDashboardHome/SellerDashboardHome";
 import getNavigation from "@/components/Navigation";
+import { useSelector } from "react-redux";
 
 
 export default function Home() {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [currentComponent, setCurrentComponent] = useState(SellerDashboardHome);
   const [navigate, setNavigate] = useState([]);
+  const { role } = useSelector((state) => state.auth); 
+
 
   useEffect(() => {
-    setNavigate(getNavigation("seller"));
+    setNavigate(getNavigation(role));
   },[])
   return (
     <div className="admin_dashboard_navigation">

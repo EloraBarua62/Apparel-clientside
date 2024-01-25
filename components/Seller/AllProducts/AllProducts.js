@@ -4,11 +4,17 @@ import styles from './AllProducts.module.scss'
 import { GoPeople } from "react-icons/go";
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import UpdateState from "@/components/Accessories/UpdateState/UpdateState";
 
 const AllProducts = () => {
   const [parPage, setParPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
+  const [productInfoUpdate, setProductInfoUpdate] = useState({})
+
+  const handleUpdate = (id) => {
+    setProductInfoUpdate({id: id})
+  }
   return (
     <div className={styles.all_products_design}>
       <div className={styles.all_products_table}>
@@ -43,12 +49,16 @@ const AllProducts = () => {
             <div className={styles.table_cell_min}>30%</div>
             <div className={styles.table_cell_min}>129</div>
             <div className={styles.table_cell}>
-              <BiSolidEdit />
+              <BiSolidEdit onClick={() => handleUpdate(index)}/>
               <RiDeleteBin6Line />
             </div>
           </div>
         ))}
       </div>
+
+      {
+        Object.keys(productInfoUpdate).length!=0 && productInfoUpdate.constructor === Object && <UpdateState productInfoUpdate={productInfoUpdate} />
+      }
     </div>
   );
 };
