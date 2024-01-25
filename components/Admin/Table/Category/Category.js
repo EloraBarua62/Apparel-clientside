@@ -8,11 +8,12 @@ import { CiImageOn } from "react-icons/ci";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { ScaleLoader } from "react-spinners";
-import { categoryAdd } from "@/app/Reducers/categoryReducer";
+import { categoryAdd, categoryGet } from "@/app/Reducers/categoryReducer";
 import toast from "react-hot-toast";
 import {
   messageClear,
 } from "@/app/Reducers/categoryReducer";
+import Search from "@/components/Accessories/Search/Search";
 
 
 
@@ -20,6 +21,7 @@ const Category = () => {
   const [parPage, setParPage] = useState(5);
   const [show, setShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchValue, setSearchValue] = useState("");
   const [imageShow, setImageShow] = useState("");
   const { loader, errorMessage, successMessage } = useSelector(
     (state) => state.category
@@ -55,13 +57,24 @@ const Category = () => {
       toast.error(errorMessage);
       dispatch(messageClear());
     }
-  }, [errorMessage, successMessage, dispatch]);
+  }, [errorMessage, successMessage]);
 
+
+  useEffect(() => {
+    const obj = {
+      parPage: parseInt(parPage),
+      page: parseInt(currentPage),
+      searchValue,
+    };
+
+    dispatch(categoryGet(obj))
+  }, [currentPage, parPage, searchValue]);
   return (
     <div className={styles.category_page_design}>
       {/* Left side content: Category */}
       <div className={styles.category_left_table}>
         <div className={styles.category_left_table_design}>
+          <Search parPage={parPage} setParPage={setParPage} searchValue={searchValue} setSearchValue={setSearchValue}/>
           {/* <select onClick={(e) => setParPage(parseInt(e.target.value))}>
             <option value="5">5</option>
             <option value="5">15</option>
