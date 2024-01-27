@@ -48,6 +48,7 @@
         .title_cell4 {
           width: 15%;
           font-size: 14px;
+          
           //   font-weight: 800;
         }
         .title_cell5 {
@@ -61,28 +62,39 @@
         .table_cell1 {
           width: 20%;
           font-size: 12px;
-          background-color: red;
+          
         }
         .table_cell2 {
           width: 25%;
           font-size: 12px;
-          background-color: red;
+          
         }
         .table_cell3 {
           width: 25%;
           font-size: 12px;
-          background-color: red;
+          
         }
         .table_cell4 {
           width: 15%;
-          font-size: 22px;
+          height: 70px;
+          // font-size: 22px;
+          overflow: hidden;
+          position: relative;
+
+          .category_image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+          }
         }
         .table_cell5 {
           width: 15%;
           font-size: 22px;
           display: flex;
           gap: 10px;
-          //   background-color: red;
+          //   
         }
       }
 

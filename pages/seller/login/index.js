@@ -13,13 +13,13 @@ const Login = () => {
     return (
       <div className="access_form_background">
         <div className="access_form">
-          <h1>ADMIN LOGIN</h1>
+          <h1>SELLER LOGIN</h1>
 
           <AccessForm array={array} step={step}></AccessForm>
 
           <p>
             New member?{" "}
-            <Link href="/admin/signup" className='newroute'>
+            <Link href="/seller/signup" className='newroute'>
               Signup
             </Link>{" "}
           </p>

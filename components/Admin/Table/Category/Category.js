@@ -23,7 +23,7 @@ const Category = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [imageShow, setImageShow] = useState("");
-  const { loader, errorMessage, successMessage } = useSelector(
+  const { loader, errorMessage, successMessage, categories } = useSelector(
     (state) => state.category
   );
   const dispatch = useDispatch();
@@ -68,13 +68,21 @@ const Category = () => {
     };
 
     dispatch(categoryGet(obj))
-  }, [currentPage, parPage, searchValue]);
+    console.log('category')
+  }, [currentPage, parPage, searchValue,dispatch]);
+
+  console.log(categories)
   return (
     <div className={styles.category_page_design}>
       {/* Left side content: Category */}
       <div className={styles.category_left_table}>
         <div className={styles.category_left_table_design}>
-          <Search parPage={parPage} setParPage={setParPage} searchValue={searchValue} setSearchValue={setSearchValue}/>
+          <Search
+            parPage={parPage}
+            setParPage={setParPage}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
           {/* <select onClick={(e) => setParPage(parseInt(e.target.value))}>
             <option value="5">5</option>
             <option value="5">15</option>
@@ -95,20 +103,23 @@ const Category = () => {
         {/*  Table content */}
         <div className={styles.category_left_table_design}>
           {/* Main field */}
-          <div className={styles.category_left_table_data}>
-            <div className={styles.table_cell1}>#237497</div>
-            <div className={styles.table_cell2}>Women's Fashion</div>
-            <div className={styles.table_cell3}>Sharee</div>
-            <div className={styles.table_cell4}>
-              <GoPeople />
+          {categories.map((category, i) => (
+            <div key={i} className={styles.category_left_table_data}>
+              <div className={styles.table_cell1}>{i+1}</div>
+              <div className={styles.table_cell2}>{category.category}</div>
+              <div className={styles.table_cell3}>{category.sub_category}</div>
+              <div className={styles.table_cell4}>
+                <Image src={category.image} alt="" fill='true' className={styles.category_image}></Image>
+              </div>
+              <div className={styles.table_cell5}>
+                <BiSolidEdit />
+                <RiDeleteBin6Line />
+              </div>
             </div>
-            <div className={styles.table_cell5}>
-              <BiSolidEdit />
-              <RiDeleteBin6Line />
-            </div>
-          </div>
+          ))}
+
           {/* Main field */}
-          <div className={styles.category_left_table_data}>
+          {/* <div className={styles.category_left_table_data}>
             <div className={styles.table_cell1}>#237498</div>
             <div className={styles.table_cell2}>Men's Ware</div>
             <div className={styles.table_cell3}>Shirt</div>
@@ -119,9 +130,9 @@ const Category = () => {
               <BiSolidEdit />
               <RiDeleteBin6Line />
             </div>
-          </div>
+          </div> */}
           {/* Main field */}
-          <div className={styles.category_left_table_data}>
+          {/* <div className={styles.category_left_table_data}>
             <div className={styles.table_cell1}>#237499</div>
             <div className={styles.table_cell2}>Baby's Care</div>
             <div className={styles.table_cell3}>Sweater</div>
@@ -132,7 +143,7 @@ const Category = () => {
               <BiSolidEdit />
               <RiDeleteBin6Line />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Pagination */}

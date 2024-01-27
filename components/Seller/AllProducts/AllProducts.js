@@ -1,20 +1,36 @@
 import Search from "@/components/Accessories/Search/Search";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './AllProducts.module.scss'
 import { GoPeople } from "react-icons/go";
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import UpdateState from "@/components/Accessories/UpdateState/UpdateState";
+import { productGet } from "@/app/Reducers/productReducer";
+import { useDispatch, useSelector } from "react-redux";
+import Image from "next/image";
 
 const AllProducts = () => {
   const [parPage, setParPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
-  const [productInfoUpdate, setProductInfoUpdate] = useState({})
-
+  const [productInfoUpdate, setProductInfoUpdate] = useState({});
+  const { products, totalproducts } = useSelector((state) => state.product);
+  
+  
+  const dispatch = useDispatch();
   const handleUpdate = (id) => {
-    setProductInfoUpdate({id: id})
-  }
+    setProductInfoUpdate({ id: id });
+  };
+
+  //  Fetching Category list
+  useEffect(() => {
+    const obj = {
+      parPage: parseInt(parPage),
+      page: parseInt(currentPage),
+      searchValue,
+    };
+    dispatch(productGet(obj));
+  }, [parPage, currentPage,searchValue]);
   return (
     <div className={styles.all_products_design}>
       <div className={styles.all_products_table}>
@@ -36,29 +52,35 @@ const AllProducts = () => {
           <div className={styles.table_cell}>Action</div>
         </div>
 
-        {[1, 2, 3, 4, 5].map((index) => (
+        {products.map((each, index) => (
           <div key={index} className={styles.all_products_table_data}>
-            <div className={styles.table_cell_min}>{index}</div>
+            <div className={styles.table_cell_min}>{index+1}</div>
             <div className={styles.table_cell}>
-              <GoPeople />
+              <Image
+                src={each.images[0]}
+                alt=""
+                fill="true"
+                className={styles.product_image}
+              ></Image>
             </div>
-            <div className={styles.table_cell}>Banarashi Sharee with Canjibaram style</div>
-            <div className={styles.table_cell}>Category</div>
-            <div className={styles.table_cell}>Brand</div>
-            <div className={styles.table_cell_min}>1000</div>
-            <div className={styles.table_cell_min}>30%</div>
-            <div className={styles.table_cell_min}>129</div>
+            <div className={styles.table_cell}>{each.name}</div>
+            <div className={styles.table_cell}>{each.category}</div>
+            <div className={styles.table_cell}>{each.brand}</div>
+            <div className={styles.table_cell_min}>{each.price}</div>
+            <div className={styles.table_cell_min}>{each.discount}</div>
+            <div className={styles.table_cell_min}>{each.stock}</div>
             <div className={styles.table_cell}>
-              <BiSolidEdit onClick={() => handleUpdate(index)}/>
+              <BiSolidEdit onClick={() => handleUpdate(id)} />
               <RiDeleteBin6Line />
             </div>
           </div>
         ))}
       </div>
 
-      {
-        Object.keys(productInfoUpdate).length!=0 && productInfoUpdate.constructor === Object && <UpdateState productInfoUpdate={productInfoUpdate} />
-      }
+      {Object.keys(productInfoUpdate).length != 0 &&
+        productInfoUpdate.constructor === Object && (
+          <UpdateState productInfoUpdate={productInfoUpdate} />
+        )}
     </div>
   );
 };

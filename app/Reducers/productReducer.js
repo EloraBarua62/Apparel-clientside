@@ -3,16 +3,15 @@ import api from "@/api/api";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // seller signup
-export const categoryAdd = createAsyncThunk(
-  "category/categoryAdd",
-  async ({ category, sub_category, image },{ rejectWithValue, fulfillWithValue }) => {
+export const productAdd = createAsyncThunk(
+  "product/productAdd",
+  async (
+    product,
+    { rejectWithValue, fulfillWithValue }
+  ) => {
     try {
-      const formData = new FormData();
-      formData.append('category', category);
-      formData.append('sub_category', sub_category);
-      formData.append('image', image);
       
-      const { data } = await api.post("/category-add", formData, {
+      const { data } = await api.post("/product-add", product, {
         withCredentials: true,
       });
 
@@ -24,16 +23,15 @@ export const categoryAdd = createAsyncThunk(
   }
 );
 
-
-export const categoryGet = createAsyncThunk(
-  "category/categoryGet",
+export const productGet = createAsyncThunk(
+  "product/productGet",
   async (
     { parPage, page, searchValue },
     { rejectWithValue, fulfillWithValue }
   ) => {
     try {
       const { data } = await api.get(
-        `/category-get?page=${page}&&searchValue=${searchValue}&&parPage=${parPage}`,
+        `/product-get?page=${page}&&searchValue=${searchValue}&&parPage=${parPage}`,
         {
           withCredentials: true,
         }
@@ -47,14 +45,14 @@ export const categoryGet = createAsyncThunk(
   }
 );
 
-export const categoryReducer = createSlice({
-  name: "category",
+export const productReducer = createSlice({
+  name: "product",
   initialState: {
     successMessage: "",
     errorMessage: "",
     loader: false,
-    categories: [],
-    totalCategory: 0,
+    products: [],
+    totalproducts: 0,
   },
 
   reducers: {
@@ -66,24 +64,24 @@ export const categoryReducer = createSlice({
 
   extraReducers: {
     // admin login
-    [categoryAdd.pending]: (state) => {
+    [productAdd.pending]: (state) => {
       state.loader = true;
     },
-    [categoryAdd.fulfilled]: (state, { payload }) => {
+    [productAdd.fulfilled]: (state, { payload }) => {
       state.loader = false;
       state.successMessage = payload.message;
     },
-    [categoryAdd.rejected]: (state, { payload }) => {
+    [productAdd.rejected]: (state, { payload }) => {
       state.loader = false;
       state.errorMessage = payload?.error;
     },
 
-    [categoryGet.fulfilled]: (state, { payload }) => {
-      state.totalCategory = payload.totalCategory;
-      state.categories = payload.categories;
+    [productGet.fulfilled]: (state, { payload }) => {
+      state.totalproduct = payload.totalproduct;
+      state.products = payload.products;
     },
   },
 });
 
-export const { messageClear } = categoryReducer.actions;
-export default categoryReducer.reducer;
+export const { messageClear } = productReducer.actions;
+export default productReducer.reducer;
