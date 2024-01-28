@@ -1,0 +1,177 @@
+@import "../../../styles/config";
+
+
+.background_design{
+    width: 75%;
+    background-color: $grey-color-deep;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+     @media (min-width: 640px) {
+    width: 50%;
+  }
+     @media (min-width: 1024px) {
+    width: 30%;
+  }
+
+  .cross_design{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+
+
+
+  form {
+    .form_field_design {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      input{
+        color: $grey-color-deep;
+        outline: none;
+        padding: 5px;
+      }
+      
+
+    }
+
+    .category_design {
+      position: relative;
+
+      label {
+        display: block;
+      }
+
+      .category_title_design {
+        padding: 4px;
+        // background-color: $grey-color-light;
+        border: 1px white;
+      }
+
+      .cateshow_design {
+        position: absolute;
+        top: 20;
+        height: 200px;
+        background-color: $grey-white-color;
+
+       .category_name_display{
+          width: 100%;
+          height: 100%;         
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 5px;
+          
+        
+          .category_field{
+            width: 100%;
+            color: $grey-color-deep;
+            font-size: 12px;
+            // padding-left: 5px;
+
+          }
+          .category_field:hover{
+              background-color: white;
+            }
+        }
+      }
+      .cateshow_design_off {
+        position: absolute;
+        top: 30;
+        // transition: all;
+        scale: 0;
+      }
+    }
+
+
+    // Field: Price, stock, discount
+    .number_field_display {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+  
+      .number_field {
+        
+        label {
+          display: block;
+        }
+        input {
+          color: $grey-color-deep;
+        outline: none;
+        padding: 5px;
+        }
+      }
+    }
+
+
+    // Field: Description
+    .text_field {
+      label {
+        display: block;
+      }
+      input {
+        color: $grey-color-deep;
+        outline: none;
+        padding: 5px;
+      }
+    }
+
+    .images_upload_section {
+        display: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+
+
+      .image_field {
+        width: 200px;
+        height: 100px;
+        background-color: $grey-color-light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .image_content_design {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+
+          .image_design {
+            object-fit: cover;
+            position: absolute;
+          }
+        }
+        label {
+          display: block;
+          gap: 5px;
+        }
+        input {
+          color: $grey-color-deep;
+          cursor: pointer;
+          display: none;
+        }
+      }
+    }
+
+    .submit_button{
+      margin-top: 20px;
+      padding: 10px;
+      background-color: $grey-color-light;
+      color: $grey-white-color;
+      border: 0 solid;
+      border-radius: 5px;
+
+      :hover{
+        background-color: $grey-color-medium;
+      }
+    }
+  }
+
+}

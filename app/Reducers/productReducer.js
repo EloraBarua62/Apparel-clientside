@@ -23,6 +23,26 @@ export const productAdd = createAsyncThunk(
   }
 );
 
+// seller signup
+export const productUpdate = createAsyncThunk(
+  "product/productUpdate",
+  async (
+    {state, productId},
+    { rejectWithValue, fulfillWithValue }
+  ) => {
+    try {
+      const { data } = await api.post(`/product-update/${productId}`, state, {
+        withCredentials: true,
+      });
+
+      console.log(data);
+      return fulfillWithValue(data);
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const productGet = createAsyncThunk(
   "product/productGet",
   async (
@@ -79,6 +99,19 @@ export const productReducer = createSlice({
     [productGet.fulfilled]: (state, { payload }) => {
       state.totalproduct = payload.totalproduct;
       state.products = payload.products;
+    },
+
+    [productUpdate.pending]: (state) => {
+      state.loader = true;
+    },
+    [productUpdate.fulfilled]: (state, { payload }) => {
+      state.loader = false;
+      state.successMessage = payload.message;
+     
+    },
+    [productUpdate.rejected]: (state, { payload }) => {
+      state.loader = false;
+      state.errorMessage = payload?.error;
     },
   },
 });

@@ -26,6 +26,7 @@ export const adminSignup = createAsyncThunk(
 export const adminLogin = createAsyncThunk(
   "auth/adminLogin",
   async (info, { rejectWithValue, fulfillWithValue }) => {
+    console.log(info)
     try {
       const { data } = await api.post("/admin-login", info, {
         withCredentials: true,
@@ -163,6 +164,7 @@ export const authReducer = createSlice({
       state.loader = false;
       state.successMessage = payload.message;
       state.token = payload.token;
+      state.userInfo = payload.userInfo
       state.role = returnRole();
     },
     [sellerLogin.rejected]: (state, { payload }) => {

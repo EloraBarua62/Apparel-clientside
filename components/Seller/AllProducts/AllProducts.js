@@ -8,6 +8,9 @@ import UpdateState from "@/components/Accessories/UpdateState/UpdateState";
 import { productGet } from "@/app/Reducers/productReducer";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+import Details from "@/components/Admin/Details";
+import { Button } from "flowbite-react";
+import Link from "next/link";
 
 const AllProducts = () => {
   const [parPage, setParPage] = useState(5);
@@ -15,11 +18,14 @@ const AllProducts = () => {
   const [searchValue, setSearchValue] = useState("");
   const [productInfoUpdate, setProductInfoUpdate] = useState({});
   const { products, totalproducts } = useSelector((state) => state.product);
+  const [openRightSidebar, setOpenRightSidebar] = useState(false);
+
   
   
   const dispatch = useDispatch();
-  const handleUpdate = (id) => {
-    setProductInfoUpdate({ id: id });
+  const handleUpdate = (product) => {
+    setProductInfoUpdate(product);
+    setOpenRightSidebar(!openRightSidebar)
   };
 
   //  Fetching Category list
@@ -54,7 +60,7 @@ const AllProducts = () => {
 
         {products.map((each, index) => (
           <div key={index} className={styles.all_products_table_data}>
-            <div className={styles.table_cell_min}>{index+1}</div>
+            <div className={styles.table_cell_min}>{index + 1}</div>
             <div className={styles.table_cell}>
               <Image
                 src={each.images[0]}
@@ -70,17 +76,30 @@ const AllProducts = () => {
             <div className={styles.table_cell_min}>{each.discount}</div>
             <div className={styles.table_cell_min}>{each.stock}</div>
             <div className={styles.table_cell}>
-              <BiSolidEdit onClick={() => handleUpdate(id)} />
+              <Button onClick={() => handleUpdate(each)}>
+                <BiSolidEdit />
+              </Button>              
               <RiDeleteBin6Line />
+              
             </div>
           </div>
         ))}
       </div>
 
-      {Object.keys(productInfoUpdate).length != 0 &&
+      {/* {Object.keys(productInfoUpdate).length != 0 &&
         productInfoUpdate.constructor === Object && (
           <UpdateState productInfoUpdate={productInfoUpdate} />
-        )}
+        )} */}
+
+      {openRightSidebar ? (
+        <UpdateState
+          openRightSidebar={openRightSidebar}
+          setOpenRightSidebar={setOpenRightSidebar}
+          productInfoUpdate={productInfoUpdate}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

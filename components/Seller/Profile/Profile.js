@@ -4,8 +4,11 @@ import { FadeLoader } from 'react-spinners';
 import Image from 'next/image';
 import profile from '../../../public/profile.jpg'
 import { FaEdit } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Profile = () => {
+  const {userInfo,role} = useSelector(state => state.auth)
+  const dispatch = useDispatch()
     const image = true;
     const loader = true;
     return (
@@ -14,7 +17,7 @@ const Profile = () => {
         <div className={styles.profile_details}>
           {/* Image section */}
           <div>
-            {image ? (
+            {userInfo?.image ? (
               <label htmlFor="img">
                 <Image src={profile} alt="" className={styles.image_design} />
                 {!loader && (
@@ -49,10 +52,10 @@ const Profile = () => {
               <FaEdit />
             </span>
 
-            <div>Name: Elora Barua</div>
-            <div>Email: elorabarua@gmail.com</div>
-            <div>Role: Seller</div>
-            <div>Status: Active</div>
+            <div>Name: {userInfo.name}</div>
+            <div>Email: {userInfo.email}</div>
+            <div>Role: {role}</div>
+            <div>Status: {userInfo.status}</div>
           </div>
           {/* Seller Profile info */}
           <div className={styles.seller_info}>

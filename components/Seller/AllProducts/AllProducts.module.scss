@@ -1,15 +1,16 @@
 @import "../../../styles/config";
 
 .all_products_design {
-  background-color: $grey-color-deep;
+  background-color: $grey-color-medium;
   color: $grey-white-color;
   display: flex;
   flex-direction: column;
   font-size: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 2px;
-  padding-right: 2px;
+  // padding-left: 2px;
+  // padding-right: 2px;
+  position: relative;
 
   @media (min-width: 1024px) {
     font-size: 15px;
