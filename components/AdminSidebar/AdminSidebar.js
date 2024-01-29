@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './AdminSidebar.module.scss'
 
 const AdminSidebar = ({ navigate, currentComponent, setCurrentComponent, openSidebar}) => {
-    console.log(currentComponent);
+    // console.log(currentComponent);
 
 
     return (

@@ -91,6 +91,20 @@ export const getUserInfo = createAsyncThunk(
   }
 );
 
+
+export const profile_image_upload = createAsyncThunk("auth/profile_image_upload", 
+async (image, {rejectWithValue, fulfillWithValue}) => {
+  console.log(image)
+  try {
+    const { data } = await api.post("/profile-image-upload", image, {
+      withCredentials: true,
+    });
+    return fulfillWithValue(data)
+  } catch (error) {
+    return rejectWithValue(error.response.data)
+  }
+});
+
 const returnRole = () => {
   let token_string = '';
   if (typeof window !== "undefined") {
@@ -135,6 +149,7 @@ export const authReducer = createSlice({
     [adminSignup.fulfilled]: (state, { payload }) => {
       state.loader = false;
       state.successMessage = payload.message;
+      state.role = returnRole();
     },
     [adminSignup.rejected]: (state, { payload }) => {
       state.loader = false;
@@ -164,12 +179,12 @@ export const authReducer = createSlice({
       state.loader = false;
       state.successMessage = payload.message;
       state.token = payload.token;
-      state.userInfo = payload.userInfo
+      state.userInfo = payload.userInfo;
       state.role = returnRole();
     },
     [sellerLogin.rejected]: (state, { payload }) => {
       state.loader = false;
-      state.errorMessage = payload.error;
+      state.errorMessage = payload?.error;
     },
 
     // seller signup
@@ -179,6 +194,7 @@ export const authReducer = createSlice({
     [sellerSignup.fulfilled]: (state, { payload }) => {
       state.loader = false;
       state.successMessage = payload.message;
+      state.role = returnRole();
     },
     [sellerSignup.rejected]: (state, { payload }) => {
       state.loader = false;
@@ -187,6 +203,15 @@ export const authReducer = createSlice({
 
     [getUserInfo.fulfilled]: (state, { payload }) => {
       state.loader = false;
+      state.userInfo = payload.userInfo;
+    },
+
+    [profile_image_upload.pending]: (state) => {
+      state.loader = true;
+    },
+    [profile_image_upload.fulfilled]: (state, { payload }) => {
+      state.loader = false;
+      state.successMessage = payload.message;
       state.userInfo = payload.userInfo;
     },
   },

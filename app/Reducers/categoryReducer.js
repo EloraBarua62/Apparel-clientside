@@ -79,6 +79,8 @@ export const categoryReducer = createSlice({
     },
 
     [categoryGet.fulfilled]: (state, { payload }) => {
+      state.loader = false;
+      state.successMessage = payload.message;
       state.totalCategory = payload.totalCategory;
       state.categories = payload.categories;
     },
